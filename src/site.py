@@ -301,12 +301,19 @@ def legal_article(c, body):
 
 
 # ---------------------------------------------------------------- shared
+def cv_link(c):
+    """Download button for the public CV (PDF in src/assets/cv/, built with the CV master in public mode)."""
+    if c.preview or not UI.get("cv"):
+        return ""
+    return f'<a class="cta2" href="{UI["cv"]["href"]}" download>{E(UI["cv"]["label"])} ↓</a>'
+
+
 def contact_footer(c):
     return f"""<section class="contact" id="contact">
   <p class="coord">{E(CONTACT['coord'])}</p>
   <h2>{E(CONTACT['title'])}</h2>
   <p class="sub">{E(CONTACT['text'])}</p>
-  <a class="cta" href="{SITE['linkedin']}" target="_blank" rel="noopener">{E(CONTACT['cta'])} ↗</a>
+  <div class="ctas"><a class="cta" href="{SITE['linkedin']}" target="_blank" rel="noopener">{E(CONTACT['cta'])} ↗</a>{cv_link(c)}</div>
 </section>
 <footer class="foot"><span>{E(UI['footer'])}</span>
 <nav aria-label="{E(UI['legal_label'])}"><a href="{c.legal_href('imprint')}">{E(UI['imprint'])}</a><a href="{c.legal_href('privacy')}">{E(UI['privacy'])}</a></nav></footer>"""
@@ -506,7 +513,10 @@ html[lang=de] :is(.kpi p,.facts dd,.tile p,.stage .d,.step .sc){hyphens:auto;-we
 .coord{font:500 12px var(--mono);letter-spacing:.16em;color:var(--teal)}
 .contact h2{margin-top:18px;font-stretch:66%;font-weight:700;font-size:clamp(56px,9vw,112px);line-height:.95;color:#fff}
 .contact .sub{margin:20px auto 0;max-width:34ch;font-size:clamp(17px,1.6vw,20px);font-weight:300;color:var(--band-t)}
-.cta{display:inline-flex;margin-top:32px;padding:16px 28px;border-radius:999px;background:var(--teal);color:var(--ink);font-weight:600;transition:background .15s}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+.cta2{display:inline-flex;padding:15px 27px;border-radius:999px;border:1px solid var(--teal);color:#fff;font-weight:600;transition:background .15s}
+.cta2:hover{color:var(--ink);background:var(--teal)}
+.cta{display:inline-flex;padding:16px 28px;border-radius:999px;background:var(--teal);color:var(--ink);font-weight:600;transition:background .15s}
 .cta:hover{color:var(--ink);background:#5DD6C2}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;padding:24px var(--gut) 32px;font-size:13px;color:var(--muted)}
 .foot nav{display:flex;gap:16px}
@@ -784,6 +794,8 @@ def build_site(out, fontdata):
     for name, data in fontdata.items():
         (out / "fonts" / name).write_bytes(data)
     make_images(out)
+    if (ASSETS / "cv").is_dir():
+        shutil.copytree(ASSETS / "cv", out / "assets" / "cv")
     (out / "assets" / "site.css").write_text(font_css(False, fontdata) + CSS, encoding="utf-8")
     (out / "assets" / "site.js").write_text(JS, encoding="utf-8")
     hero_ws = IMAGES["hero"]["widths"]
@@ -836,7 +848,8 @@ def build_site(out, fontdata):
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
             f"  <url><loc>{BASE}/</loc>{alts}</url>\n  <url><loc>{BASE}/de/</loc>{alts}</url>\n</urlset>\n")
     else:
-        (out / "robots.txt").write_text("User-agent: *\nAllow: /\n")
+        # noindex cannot be set inside a PDF and GitHub Pages sends no X-Robots-Tag, so the CV is blocked here
+        (out / "robots.txt").write_text("User-agent: *\nAllow: /\nDisallow: /assets/cv/\n")
     (out / "CNAME").write_text(_EN.SITE["domain"] + "\n")
     (out / ".nojekyll").write_text("")
     print("site ->", out, "(indexing on)" if INDEXING else "(link-only: noindex)")

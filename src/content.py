@@ -74,11 +74,11 @@ HOME = {
     ],
     # (title, years, subtitle)
     "career": [
-        ("Portfolio & Program Lead · Mercedes-Benz", "2022 –", "Order-to-Handover transformation: five Agile Release Trains in one portfolio, from strategic planning to operational steering."),
-        ("Head of Data & Solutions · MB Consulting", "2017 –", "Co-built the in-house digital consultancy, then the data science and platform team of the Digital Accelerator."),
-        ("Team Lead & PM · Mercedes pay", "2015 –", "Ramp-up of Mercedes pay as the central payment provider for Daimler and car2go."),
-        ("Founder SQwallet · COO · mr. net group", "2011 –", "Group-wide product team built, mobile payment taken to a city pilot, IT and finance restructured as COO."),
-        ("Controller · Daimler AG", "2009 –", "Profitability and target setting for product projects and strategic planning."),
+        ("Portfolio & Program Lead · Mercedes-Benz", "2022 – today", "Order-to-Handover transformation: five Agile Release Trains in one portfolio, from strategic planning to operational steering."),
+        ("Head of Data & Solutions · MB Consulting", "2017 – 2022", "Co-built the in-house digital consultancy, then the data science and platform team of the Digital Accelerator."),
+        ("Team Lead & PM · Mercedes pay", "2015 – 2017", "Ramp-up of Mercedes pay as the central payment provider for Daimler and car2go."),
+        ("Founder SQwallet · COO · mr. net group", "2011 – 2014", "Group-wide product team built, mobile payment taken to a city pilot, IT and finance restructured as COO."),
+        ("Controller · Daimler AG", "2009 – 2011", "Profitability and target setting for product projects and strategic planning."),
     ],
     "education": "M.Sc. Economics (Bilbao) · B.A. Business Administration (DHBW Stuttgart)",
     "side": [
@@ -277,5 +277,6 @@ UI = {
     "footer": "© 2026 Daniel Rohbeck · Profile & work samples", "legal_label": "Legal",
     "imprint": "Imprint", "imprint_eyebrow": "Legal notice", "privacy": "Privacy", "privacy_eyebrow": "Privacy policy",
     "back_start": "← Back to start",
+    "cv": {"href": "/assets/cv/Daniel-Rohbeck-CV.pdf", "label": "Download CV (PDF)"},
     "og_lines": ["I turn vague goals into", "high-performing teams and products."],
 }

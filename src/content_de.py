@@ -44,11 +44,11 @@ HOME = {
         {"case": "sqwallet", "years": "2012 – 2014", "extra": "GRÜNDER", "title": "Vom Mobile Wallet zum B2B-Zahlungsdienst"},
     ],
     "career": [
-        ("Portfolio & Program Lead · Mercedes-Benz", "2022 –", "Order-to-Handover-Transformation: fünf Agile Release Trains in einem Portfolio, von der strategischen Planung bis zur operativen Steuerung."),
-        ("Head of Data & Solutions · MB Consulting", "2017 –", "Mitaufbau der internen Digitalberatung, danach Aufbau des Data-Science- und Plattform-Teams im Digital Accelerator."),
-        ("Team Lead & PM · Mercedes pay", "2015 –", "Aufbau von Mercedes pay zum zentralen Payment-Provider für Daimler und car2go."),
-        ("Gründer SQwallet · COO · mr. net group", "2011 –", "Aufbau eines gruppenweiten Produktteams, Mobile Payment bis zum Stadtpiloten, als COO Neuaufstellung von IT und Finance."),
-        ("Controller · Daimler AG", "2009 –", "Profitabilitätsrechnung und Zielsetzung für Produktprojekte und die strategische Planung."),
+        ("Portfolio & Program Lead · Mercedes-Benz", "2022 – heute", "Order-to-Handover-Transformation: fünf Agile Release Trains in einem Portfolio, von der strategischen Planung bis zur operativen Steuerung."),
+        ("Head of Data & Solutions · MB Consulting", "2017 – 2022", "Mitaufbau der internen Digitalberatung, danach Aufbau des Data-Science- und Plattform-Teams im Digital Accelerator."),
+        ("Team Lead & PM · Mercedes pay", "2015 – 2017", "Aufbau von Mercedes pay zum zentralen Payment-Provider für Daimler und car2go."),
+        ("Gründer SQwallet · COO · mr. net group", "2011 – 2014", "Aufbau eines gruppenweiten Produktteams, Mobile Payment bis zum Stadtpiloten, als COO Neuaufstellung von IT und Finance."),
+        ("Controller · Daimler AG", "2009 – 2011", "Profitabilitätsrechnung und Zielsetzung für Produktprojekte und die strategische Planung."),
     ],
     "education": "M.Sc. Economics (Bilbao) · B.A. Betriebswirtschaft (DHBW Stuttgart)",
     "side": [
@@ -246,5 +246,6 @@ UI = {
     "footer": "© 2026 Daniel Rohbeck · Profil & Case Studies", "legal_label": "Rechtliches",
     "imprint": "Impressum", "imprint_eyebrow": "Rechtliches", "privacy": "Datenschutz", "privacy_eyebrow": "Datenschutzerklärung",
     "back_start": "← Zurück zur Startseite",
+    "cv": {"href": "/assets/cv/Daniel-Rohbeck-Lebenslauf.pdf", "label": "Lebenslauf als PDF"},
     "og_lines": ["Aus vagen Zielen mache ich", "funktionierende Teams und Produkte."],
 }

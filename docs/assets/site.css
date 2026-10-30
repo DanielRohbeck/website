@@ -197,7 +197,10 @@ html[lang=de] :is(.kpi p,.facts dd,.tile p,.stage .d,.step .sc){hyphens:auto;-we
 .coord{font:500 12px var(--mono);letter-spacing:.16em;color:var(--teal)}
 .contact h2{margin-top:18px;font-stretch:66%;font-weight:700;font-size:clamp(56px,9vw,112px);line-height:.95;color:#fff}
 .contact .sub{margin:20px auto 0;max-width:34ch;font-size:clamp(17px,1.6vw,20px);font-weight:300;color:var(--band-t)}
-.cta{display:inline-flex;margin-top:32px;padding:16px 28px;border-radius:999px;background:var(--teal);color:var(--ink);font-weight:600;transition:background .15s}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+.cta2{display:inline-flex;padding:15px 27px;border-radius:999px;border:1px solid var(--teal);color:#fff;font-weight:600;transition:background .15s}
+.cta2:hover{color:var(--ink);background:var(--teal)}
+.cta{display:inline-flex;padding:16px 28px;border-radius:999px;background:var(--teal);color:var(--ink);font-weight:600;transition:background .15s}
 .cta:hover{color:var(--ink);background:#5DD6C2}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;padding:24px var(--gut) 32px;font-size:13px;color:var(--muted)}
 .foot nav{display:flex;gap:16px}
